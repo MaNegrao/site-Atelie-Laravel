@@ -2641,21 +2641,37 @@ img {
   width: 100%;
 }
 #aa-myaccount .aa-myaccount-area h4 {
-  border-bottom: 1px solid #ccc;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
   padding-bottom: 15px;
 }
+
+#aa-myaccount .aa-myaccount-area h2 {
+  border-bottom: 1px solid #ccc
+
+ }
 #aa-myaccount .aa-myaccount-area .aa-myaccount-login {
   display: inline;
   float: left;
   width: 100%;
 }
 #aa-myaccount .aa-myaccount-area .aa-myaccount-register {
+  border-left: 1px solid #ccc;
+  padding-left: 30px;
   display: inline;
   float: left;
   width: 100%;
+}
+
+#aa-myaccount .aa-myaccount-area .aa-myaccount-register select {
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 100px;
+  margin-right:25px;
+}
+#aa-myaccount .aa-myaccount-area .aa-myaccount-register select option {
+  padding: 4px;
 }
 
 /*---- Login form ----*/

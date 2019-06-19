@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Usuario extends Controller
+class UsuarioController extends Controller
 {
+
+
+
 	public function __construct(){
-		
+
 	}
 
     public function index(){
