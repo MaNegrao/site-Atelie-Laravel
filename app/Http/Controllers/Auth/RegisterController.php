@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Usuario;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 class RegisterController extends Controller
 {
     /*
-    |--------------------------------------------------------------------------
+    ','--------------------------------------------------------------------------
     | Register Controller
     |--------------------------------------------------------------------------
     |
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cadastro';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,11 +48,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:Usuario',
-            'senha' => 'required|string|min:8|confirmed',
-            'cpf' => 'required|string|min:11|unique:Usuario',
-            'dtNasc' => 'date_format'
+            'nome' => ['required','string','max:255'],
+            'email' => ['required','string','email','max:255','unique:Usuario'],
+            'senha' => ['required','string','min:8'],
+            'cpf' => ['required','string','min:11','unique:Usuario'],
+            'dtNasc' => ['required'],
+            'cel' => ['required','min:11'],
+            'sexo' => ['required'],
         ]);
     }
 
@@ -64,11 +66,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return 'dede';
-        return User::create([
-            'name' => $data['name'],
+        return Usuario::create([
+            'nome' => $data['nome'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'senha' => bcrypt($data['senha']),
+            'cpf' => $data['cpf'],
+            'dtNasc' => $data['dtNasc'],
+            'cel' => $data['cel'],
+            'sexo' => $data['sexo'],
         ]);
     }
 }

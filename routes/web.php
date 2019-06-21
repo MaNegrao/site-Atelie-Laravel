@@ -14,8 +14,6 @@ Route::get('/', 'Controller@index');
 
 Route::resource('produto', 'ProdutoController');
 
-Route::view('/cadastro', 'login');
+Route::view('/cadastro', 'auth.register');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
