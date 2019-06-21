@@ -4,14 +4,14 @@
 
 <!-- catg header banner section -->
 <section id="aa-catg-head-banner">
-  <img src="img/cadastre-se-1.jpg" alt="fashion img">
+  <img src="{{URL::asset(img/cadastre-se-1.jpg)}}" alt="fashion img">
   <div class="aa-catg-head-banner-area">
    <div class="container">
     <div class="aa-catg-head-banner-content">
-      <h2>Entre ou Registre-se</h2>
+      <h2>{{__('Entre ou Registre-se')}}</h2>
       <ol class="breadcrumb">
-        <li><a href="{{url('/')}}">Pagina Inicial</a></li>
-        <li class="active">Cadastro</li>
+        <li><a href="{{url('/')}}">{{__('Pagina Inicial')}}</a></li>
+        <li class="active">{{__('Cadastro')}}</li>
       </ol>
     </div>
    </div>
