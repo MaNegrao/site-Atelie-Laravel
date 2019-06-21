@@ -23,7 +23,6 @@ class Controller extends BaseController
     						->orderBy('qtd')->limit(2)->get())->merge(DB::table('Produto')
     						->select('nome', 'img', 'idProduto', 'promoPor', 'promoMsg', 'seg')
     						->orderBy('idProduto', 'desc')->limit(2)->get());
-    	return view('index', compact('sliders', 'proDesc', 'promoBanner'));
-    	
+    	return view('index', compact('sliders', 'proDesc', 'promoBanner'));	
     }
 }

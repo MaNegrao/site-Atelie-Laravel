@@ -1,4 +1,4 @@
-@extends('includes.template')
+@extends('layouts.template')
 
 @section('content')
 
@@ -44,18 +44,18 @@
               <div class="aa-myaccount-register">
                <h2>Cadastre-se</h2>
                <form action="{{route('register')}}" method="post" class="aa-login-form">
-                 @csrf
+                 {{csrf_field()}}
                   <label for="nome">{{__('Nome Completo')}}<span>*</span></label>
                   <input name="nome"type="text" id="nome" required class="@error('nome') is-invalid @enderror">
                   <label for="cpf">{{__('CPF')}}<span>*</span></label>               
-                  <input type="text" name="cpf" placeholder="Apenas Números">
+                  <input type="text" name="cpf" placeholder="Apenas Números" required>
                   <label for="sexo">{{__('Sexo')}}<span>*</span></label>
                   <select name="sexo">
                     <option>M</option>
                     <option>F</option>
                   </select>
                   <label for="dtNasc">{{__('Data de Nascimento')}}<span>*</span></label>
-                  <input type="date" name="dtNasc">                
+                  <input type="date" required name="dtNasc">                
                   <hr>
                   <h4>Endereço:</h4>
                   <label for="cd-titulo">{{__('Nome endereço')}}<span>*</span></label>

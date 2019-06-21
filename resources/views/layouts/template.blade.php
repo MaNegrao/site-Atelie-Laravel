@@ -78,9 +78,10 @@
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
                   <li><a href="account.html">Minha Conta</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Lista de Desejos</a></li>
+                  <li class="hidden-xs"><a href="#">Lista de Desejos</a></li>
                   <li class="hidden-xs"><a href="#">Personalize</a></li>
-                  <li class="hidden-xs"><a href="cart.html">Carrinho</a></li>
+                  <li class="hidden-xs"><a href="{{url('/carrinho')}}">Carrinho</a></li>
+                  <li class="hidden-xs"><a href="{{route('register')}}">Cadastre-se</a></li>
                   <li><a href="" data-toggle="modal" data-target="#login-modal">Entrar</a></li>
                 </ul>
               </div>
@@ -115,10 +116,10 @@
                 <div class="aa-cartbox-summary">
                   <ul>
                     <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                      <a class="aa-cartbox-img" href="#"><img src="{{ URL::asset('img/produtos/anel-ouro-prata-1.jpg')}}" alt="img"></a>
                       <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
+                        <h4><a href="#">Anel de Ouro e Prata</a></h4>
+                        <p>1 x R$1.049,97</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                     </li>
@@ -127,11 +128,11 @@
                         Total
                       </span>
                       <span class="aa-cartbox-total-price">
-                        $500
+                        R$1.049,97
                       </span>
                     </li>
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Finalizar</a>
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url('/carrinho')}}">Finalizar</a>
                 </div>
               </div>
               <!-- / cart box -->
@@ -178,7 +179,7 @@
                   <li><a href="#">Ver Todas as Alianças<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="#">Anéis <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/1')}} ">Anéis <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Anéis com Pedras Preciosas</a></li>
                   <li><a href="#">Anéis com Zircônias</a></li>
@@ -394,7 +395,7 @@
             <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme">Lembrar de mim</label>
             <p class="aa-lost-password"><a href="#">Esqueci minha senha</a></p>
             <div class="aa-register-now">
-              Ainda não tem uma conta?<a href="{{url('/cadastro')}}">Cadastre-se Aqui!</a>
+              Ainda não tem uma conta?<a href="{{route('register')}}">Cadastre-se Aqui!</a>
             </div>
           </form>
         </div>

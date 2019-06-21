@@ -14,10 +14,16 @@ class ProdutoController extends Controller
     }
 
 
-    public function list(){
-    	$produtos = Produto::all();
-    	$total = Produto::all()->count();
-    	return view('list-Produtos', compact('produtos', 'total'));
+    public function list($cat = null, $subCat = null){
+        if($subCat == null && $cat != null){
+            $produtos = Produto::where('cat', '=', '$cat')->get();
+        }
+        else if($subCat != null){
+            $produtos = Produto::where('subCat', '=', '$subcat')->get();
+        }
+        else
+            $produtos = Produto::all();
+    	return view('list-produtos', compact('produtos'));
     }
 
     public function create() {

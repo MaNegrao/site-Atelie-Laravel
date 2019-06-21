@@ -12,8 +12,8 @@
 */
 Route::get('/', 'Controller@index');
 
-Route::resource('produto', 'ProdutoController');
+Route::get('list-produtos/{cat?}/{subCat?}','ProdutoController@list');
 
-Route::view('/cadastro', 'auth.register');
+Route::resource('produto', 'ProdutoController');
 
 Auth::routes();
