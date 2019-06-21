@@ -215,7 +215,6 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
           <aside class="aa-sidebar">
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Categoria</h3>
               <ul class="aa-catg-nav">
@@ -229,7 +228,6 @@
                 <li><a href="{{ url('list-produtos/6/8')}}">Relógios Masculinos</a></li>
               </ul>
             </div>
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Material</h3>
               <div class="tag-cloud">
@@ -241,8 +239,6 @@
                 <a href="#">Aço Cirurgico</a>
               </div>
             </div>
-            <!-- single sidebar -->
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Pedras</h3>
               <div class="tag-cloud">
@@ -255,8 +251,6 @@
                 <a href="#">Quartzo</a>
               </div>
             </div>
-            <!-- single sidebar -->
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Segmento</h3>
               <div class="tag-cloud">
@@ -266,55 +260,30 @@
                 <a href="#">Infantil</a>
               </div>
             </div>
-            <!-- single sidebar -->
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Material</h3>
+              <h3>Tamanho</h3>
               <div class="tag-cloud">
-                <a href="#">Ouro</a>
-                <a href="#">Ouro Rosé</a>
-                <a href="#">Ouro Branco</a>
-                <a href="#">Prata</a>
-                <a href="#">Couro</a>
-                <a href="#">Aço Cirurgico</a>
+                <a href="#">15</a>
+                <a href="#">16</a>
+                <a href="#">17</a>
+                <a href="#">18</a>
+                <a href="#">19</a>
               </div>
             </div>
-            <!-- single sidebar -->
             <div class="aa-sidebar-widget">
               <h3>Preço</h3>              
-              <!-- price range -->
-              <div class="aa-sidebar-price-range">
-               <form action="">
-                  <div id="skipstep" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                  </div>
-                  <span id="skip-value-lower" class="example-val">30.00</span>
-                 <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filtrar</button>
-               </form>
-              </div>              
-
+              <ul class="aa-catg-nav">
+                <li><a href="#"></a> - R$100</li>             
+                <li><a href="#">R$100 - R$500</a></li>
+                <li><a href="#">R$1000 - R$2000</a></li>
+                <li><a href="#">R$2000 - R$3000</a></li>
+                <li><a href="#">R$3000 - R$4000</a></li>
+                <li><a href="#">R$4000 - R$5000</a></li>
+                <li><a href="#">R$5000 -</a></li>
+              </ul>
             </div>
-            <!-- single sidebar >
-            <div class="aa-sidebar-widget">
-              <h3>Shop By Color</h3>
-              <div class="aa-color-tag">
-                <a class="aa-color-green" href="#"></a>
-                <a class="aa-color-yellow" href="#"></a>
-                <a class="aa-color-pink" href="#"></a>
-                <a class="aa-color-purple" href="#"></a>
-                <a class="aa-color-blue" href="#"></a>
-                <a class="aa-color-orange" href="#"></a>
-                <a class="aa-color-gray" href="#"></a>
-                <a class="aa-color-black" href="#"></a>
-                <a class="aa-color-white" href="#"></a>
-                <a class="aa-color-cyan" href="#"></a>
-                <a class="aa-color-olive" href="#"></a>
-                <a class="aa-color-orchid" href="#"></a>
-              </div>                            
-            </div-->
           </aside>
         </div>
-       
       </div>
     </div>
   </section>
