@@ -68,10 +68,10 @@
                         <div class="">
                           <div class="aa-prod-view-size">
                           <h3>Tamanho: </h3>
-                          <a href="#">S</a>
-                          <a href="#">M</a>
-                          <a href="#">L</a>
-                          <a href="#">XL</a>
+                          <a href="#">16</a>
+                          <a href="#">17</a>
+                          <a href="#">18</a>
+                          <a href="#">19</a>
                         </div>
                         <div class="aa-prod-quantity">
                           <form action="">

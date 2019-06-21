@@ -180,8 +180,8 @@
                                 </p>
                               </div>
                               <div class="aa-prod-view-bottom">
-                                <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Comprar</a>
-                                <a href="{{route('produto.show', $produto->idProduto)}}" class="aa-add-to-cart-btn">Ver Produto</a>
+                                <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>{{__('Comprar')}}</a>
+                                <a href="{{route('produto.show', $produto->idProduto)}}" class="aa-add-to-cart-btn">{{__('Ver Produto')}}</a>
                               </div>
                             </div>
                           </div>
@@ -216,70 +216,70 @@
         <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
           <aside class="aa-sidebar">
             <div class="aa-sidebar-widget">
-              <h3>Categoria</h3>
+              <h3>{{__('Categoria')}}</h3>
               <ul class="aa-catg-nav">
-                <li><a href="{{ url('list-produtos/1/1')}}">Anéis de Ouro</a></li>
-                <li><a href="{{ url('list-produtos/2/2')}}">Colares com Diamantes</a></li>
-                <li><a href="{{ url('list-produtos/3/3')}}">Alianças de Ouro</a></li>
-                <li><a href="{{ url('list-produtos/1/4')}}">Anéis de Formatura</a></li>
-                <li><a href="{{ url('list-produtos/3/5')}}">Alianças de Noivado</a></li>
-                <li><a href="{{ url('list-produtos/1/6')}}">Anéis Exclusivos</a></li>
-                <li><a href="{{ url('list-produtos/4/7')}}">Braceletes Masculinos</a></li>
-                <li><a href="{{ url('list-produtos/6/8')}}">Relógios Masculinos</a></li>
+                <li><a href="{{ url('list-produtos/1/1')}}">{{__('Anéis de Ouro')}}</a></li>
+                <li><a href="{{ url('list-produtos/2/2')}}">{{__('Colares com Diamantes')}}</a></li>
+                <li><a href="{{ url('list-produtos/3/3')}}">{{__('Alianças de Ouro')}}</a></li>
+                <li><a href="{{ url('list-produtos/1/4')}}">{{__('Anéis de Formatura')}}</a></li>
+                <li><a href="{{ url('list-produtos/3/5')}}">{{__('Alianças de Noivado')}}</a></li>
+                <li><a href="{{ url('list-produtos/1/6')}}">{{__('Anéis Exclusivos')}}</a></li>
+                <li><a href="{{ url('list-produtos/4/7')}}">{{__('Braceletes Masculinos')}}</a></li>
+                <li><a href="{{ url('list-produtos/6/8')}}">{{__('Relógios Masculinos')}}</a></li>
               </ul>
             </div>
             <div class="aa-sidebar-widget">
-              <h3>Material</h3>
+              <h3>{{__('Material')}}</h3>
               <div class="tag-cloud">
-                <a href="#">Ouro</a>
-                <a href="#">Ouro Rosé</a>
-                <a href="#">Ouro Branco</a>
-                <a href="#">Prata</a>
-                <a href="#">Couro</a>
-                <a href="#">Aço Cirurgico</a>
+                <a href="#">{{__('Ouro')}}</a>
+                <a href="#">{{__('Ouro Rosé')}}</a>
+                <a href="#">{{__('Ouro Branco')}}</a>
+                <a href="#">{{__('Prata')}}</a>
+                <a href="#">{{__('Couro')}}</a>
+                <a href="#">{{__('Aço Cirurgico')}}</a>
               </div>
             </div>
             <div class="aa-sidebar-widget">
-              <h3>Pedras</h3>
+              <h3>{{__('Pedras')}}</h3>
               <div class="tag-cloud">
-                <a href="#">Jade</a>
-                <a href="#">Rubi</a>
-                <a href="#">Diamante</a>
-                <a href="#">Topazio</a/>
-                <a href="#">Esmeralda</a>
-                <a href="#">Zirconia</a>
-                <a href="#">Quartzo</a>
+                <a href="#">{{__('Jade')}}</a>
+                <a href="#">{{__('Rubi')}}</a>
+                <a href="#">{{__('Diamante')}}</a>
+                <a href="#">{{__('Topazio')}}</a/>
+                <a href="#">{{__('Esmeralda')}}</a>
+                <a href="#">{{__('Zirconia')}}</a>
+                <a href="#">{{__('Quartzo')}}</a>
               </div>
             </div>
             <div class="aa-sidebar-widget">
-              <h3>Segmento</h3>
+              <h3>{{__('Segmento')}}</h3>
               <div class="tag-cloud">
-                <a href="#">Feminino</a>
-                <a href="#">Masculino</a>
-                <a href="#">Unisex</a>
-                <a href="#">Infantil</a>
+                <a href="#">{{__('Feminino')}}</a>
+                <a href="#">{{__('Masculino')}}</a>
+                <a href="#">{{__('Unisex')}}</a>
+                <a href="#">{{__('Infantil')}}</a>
               </div>
             </div>
             <div class="aa-sidebar-widget">
-              <h3>Tamanho</h3>
+              <h3>{{__('Tamanho')}}</h3>
               <div class="tag-cloud">
-                <a href="#">15</a>
-                <a href="#">16</a>
-                <a href="#">17</a>
-                <a href="#">18</a>
-                <a href="#">19</a>
+                <a href="#">{{__('15')}}</a>
+                <a href="#">{{__('16')}}</a>
+                <a href="#">{{__('17')}}</a>
+                <a href="#">{{__('18')}}</a>
+                <a href="#">{{__('19')}}</a>
               </div>
             </div>
             <div class="aa-sidebar-widget">
-              <h3>Preço</h3>              
+              <h3>{{__('Preço')}}</h3>              
               <ul class="aa-catg-nav">
-                <li><a href="#"></a> - R$100</li>             
-                <li><a href="#">R$100 - R$500</a></li>
-                <li><a href="#">R$1000 - R$2000</a></li>
-                <li><a href="#">R$2000 - R$3000</a></li>
-                <li><a href="#">R$3000 - R$4000</a></li>
-                <li><a href="#">R$4000 - R$5000</a></li>
-                <li><a href="#">R$5000 -</a></li>
+                <li><a href="#"></a>{{__('Abaixo de R$100')}}</li>             
+                <li><a href="#">{{__('R$100 - R$500')}}</a></li>
+                <li><a href="#">{{__('R$1000 - R$2000')}}</a></li>
+                <li><a href="#">{{__('R$2000 - R$3000')}}</a></li>
+                <li><a href="#">{{__('R$3000 - R$4000')}}</a></li>
+                <li><a href="#">{{__('R$4000 - R$5000')}}</a></li>
+                <li><a href="#">{{__('Acimda de R$5000')}}</a></li>
               </ul>
             </div>
           </aside>
