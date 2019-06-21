@@ -16,4 +16,6 @@ Route::get('list-produtos/{cat?}/{subCat?}','ProdutoController@list');
 
 Route::resource('produto', 'ProdutoController');
 
+Route::view('/carrinho', 'carrinho');
+
 Auth::routes();
