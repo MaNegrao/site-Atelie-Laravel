@@ -169,31 +169,32 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="#">Alianças <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/3')}}">Alianças <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Alianças de Ouro</a></li>
+                  <li><a href="{{ url('list-produtos/3/3')}}">Alianças de Ouro</a></li>
                   <li><a href="#">Alianças de Bodas</a></li>
-                  <li><a href="#">Alianças de Noivado</a></li>
+                  <li><a href="{{ url('list-produtos/3/5')}}">Alianças de Noivado</a></li>
                   <li><a href="#">Alianças de Compromisso</a></li>
                   <li><a href="#">Alianças de Aço Cirurgico</a></li>
-                  <li><a href="#">Ver Todas as Alianças<span class="caret"></span></a></li>
+                  <li><a href="{{ url('list-produtos/3')}}">Ver Todas as Alianças<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="{{ url('list-produtos/1')}} ">Anéis <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/1')}}">Anéis <span class="caret"></span></a>
                 <ul class="dropdown-menu">
+                  <li><a href="{{ url('list-produtos/1/1')}}">Anéis de Ouro</a></li>
                   <li><a href="#">Anéis com Pedras Preciosas</a></li>
                   <li><a href="#">Anéis com Zircônias</a></li>
                   <li><a href="#">Anéis com Diamantes</a></li>
-                  <li><a href="#">Anéis de Formatura</a></li>
+                  <li><a href="{{ url('list-produtos/1/4')}}">Anéis de Formatura</a></li>
                   <li><a href="#">Anéis de Ouro Branco</a></li>
                   <li><a href="#">Anéis de Prata</a></li>
-                  <li><a href="#">Anéis Colecionavéis</a></li>
+                  <li><a href="{{ url('list-produtos/1/6')}}">Anéis Exclusivos</a></li>
                   <li><a href="#">Anéis Infantis</a></li>
                   <li><a href="#">Anéis Masculinos</a></li>
-                  <li><a href="#">Ver Todos os Anéis<span class="caret"></span></a></li>
+                  <li><a href="{{ url('list-produtos/1')}}">Ver Todos os Anéis<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="#">Brincos <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/5')}}">Brincos <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Brincos de Pedras Preciosas</a></li>
                   <li><a href="#">Brincos de Ouro</a></li>
@@ -204,23 +205,23 @@
                   <li><a href="#">Brincos Cartier</a></li>
                   <li><a href="#">Brincos Infatis</a></li>
                   <li><a href="#">Brincos Masculinos</a></li>
-                  <li><a href="#">Ver Todos os Brincos<span class="caret"></span></a></li>
+                  <li><a href="{{ url('list-produtos/5')}}">Ver Todos os Brincos<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="#">Correntes <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/2')}}">Colares<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Correntes com Pedras Preciosas</a></li>
-                  <li><a href="#">Correntes de Ouro</a></li>
-                  <li><a href="#">Correntes de Prata</a></li>
-                  <li><a href="#">Correntes com Diamantes</a></li>
-                  <li><a href="#">Correntes sem Pedra</a></li>
-                  <li><a href="#">Correntes Tradicionais</a></li>
+                  <li><a href="#">Colares com Pedras Preciosas</a></li>
+                  <li><a href="#">Colares de Ouro</a></li>
+                  <li><a href="#">Colares de Prata</a></li>
+                  <li><a href="{{ url('list-produtos/2/2')}}">Colares com Diamantes</a></li>
+                  <li><a href="#">Colares sem Pedra</a></li>
+                  <li><a href="#">Colares Tradicionais</a></li>
                   <li><a href="#">Correntes Masculinas</a></li>
-                  <li><a href="#">Correntes Infatis</a></li>
-                  <li><a href="#">Ver Todos as Correntes<span class="caret"></span></a></li>
+                  <li><a href="#">Colares Infatis</a></li>
+                  <li><a href="{{ url('list-produtos/2')}}">Ver Todos os Colares<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="#">Relógios <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/6')}}">Relógios <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Relógios com Pedras Preciosas</a></li>
                   <li><a href="#">Relógios de Ouro</a></li>
@@ -229,11 +230,11 @@
                   <li><a href="#">Relógios com Diamantes</a></li>
                   <li><a href="#">Relógios Tradicionais</a></li>
                   <li><a href="#">Relógios Exclusivos</a></li>
-                  <li><a href="#">Relógios Masculinos</a></li>
-                  <li><a href="#">Ver Todos os Relógios<span class="caret"></span></a></li>
+                  <li><a href="{{ url('list-produtos/6/8')}}">Relógios Masculinos</a></li>
+                  <li><a href="{{ url('list-produtos/6')}}">Ver Todos os Relógios<span class="caret"></span></a></li>
                 </ul>
               </li>
-              <li><a href="#">Braceletes <span class="caret"></span></a>
+              <li><a href="{{ url('list-produtos/4')}}">Braceletes <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">Braceletes com Pedras Preciosas</a></li>
                   <li><a href="#">Braceletes de Ouro</a></li>
@@ -241,9 +242,9 @@
                   <li><a href="#">Braceletes com Diamantes</a></li>
                   <li><a href="#">Braceletes sem Pedra</a></li>
                   <li><a href="#">Braceletes Tradicionais</a></li>
-                  <li><a href="#">Braceletes Masculinos</a></li>
+                  <li><a href="{{ url('list-produtos/4/7')}}">Braceletes Masculinos</a></li>
                   <li><a href="#">Braceletes Infatis</a></li>
-                  <li><a href="#">Ver Todos os Braceletes<span class="caret"></span></a></li>
+                  <li><a href="{{ url('list-produtos/4')}}">Ver Todos os Braceletes<span class="caret"></span></a></li>
                 </ul>
               </li>
               <li><a href="">Coleções <span class="caret"></span></a>

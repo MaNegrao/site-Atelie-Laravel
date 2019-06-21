@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Produto;
+use App\ProdCat;
+use App\ProdSubCat;
 
 class ProdutoController extends Controller
 {
@@ -13,17 +15,28 @@ class ProdutoController extends Controller
         return view('404');
     }
 
-
     public function list($cat = null, $subCat = null){
         if($subCat == null && $cat != null){
-            $produtos = Produto::where('cat', '=', '$cat')->get();
+            $produtos = Produto::where('cat', '=', $cat)->get();
+            list($prodCat) = ProdCat::where('idCat', '=', $cat)->get();
+            $prodSubCat = null;
         }
         else if($subCat != null){
-            $produtos = Produto::where('subCat', '=', '$subcat')->get();
+            $produtos = Produto::where('subCat', '=', $subCat)->get();
+            list($prodSubCat) = ProdSubCat::where('idSubCat', '=', $subCat)->get();
+            list($prodCat) = ProdCat::where('idCat', '=', $cat)->get();
         }
-        else
+        else{
             $produtos = Produto::all();
-    	return view('list-produtos', compact('produtos'));
+            $prodSubCat = null;
+            $prodCat = null;
+        }
+
+        if($produtos == '[]'){
+            return view('404');
+        }
+
+        return view('list-produtos', compact('produtos', 'prodCat', 'prodSubCat'));
     }
 
     public function create() {

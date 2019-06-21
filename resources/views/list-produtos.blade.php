@@ -4,14 +4,29 @@
 
 <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{URL::asset('img/')}}" alt="fashion img">
+   <img src="{{URL::asset('img/banners/banner-Anéis.jpg')}}" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
-        <h2>Fashion</h2>
+        @if($prodCat == null && $prodSubCat == null)         
+          <h2>{{__('Produtos')}}</h2>
+        @elseif($prodCat != null && $prodSubCat == null)
+          <h2>{{$prodCat->nome}}</h2>
+        @elseif($prodSubCat != null)
+          <h2>{{$prodSubCat->nome}}</h2>
+        @endif
         <ol class="breadcrumb">
-          <li><a href="{{url('/')}}">Pagina Inicial</a></li>         
-          <li class="active">{{}}</li>
+          <li><a href="{{url('/')}}">{{__('Pagina Inicial')}}</a></li>
+          @if($prodCat == null && $prodSubCat == null)         
+            <li><a class="active" href="{{url('/list-produtos')}}">{{__('Produtos')}}</a></li>
+          @elseif($prodCat != null && $prodSubCat == null)
+            <li><a href="{{url('/list-produtos')}}">{{__('Produtos')}}</a></li>
+            <li><a class="active" href="{{url('/list-produtos/' . $prodCat->idCat)}}">{{$prodCat->nome}}</a></li>         
+          @elseif($prodSubCat != null)
+            <li><a href="{{url('/list-produtos')}}">{{__('Produtos')}}</a></li>
+            <li><a href="{{url('/list-produtos/' . $prodCat->idCat)}}">{{$prodCat->nome}}</a></li>
+            <li><a class="active" href="{{url('/list-produtos/' . $prodCat->idCat .'/'. $prodSubCat->idSubCat)}}">{{$prodSubCat->nome}}</a></li>
+          @endif
         </ol>
       </div>
      </div>
@@ -36,14 +51,6 @@
                     <option value="4">Mais Relevantes</option>
                   </select>
                 </form>
-                <form action="" class="aa-show-form">
-                  <label for="">Show</label>
-                  <select name="">
-                    <option value="1" selected="12">12</option>
-                    <option value="2">24</option>
-                    <option value="3">36</option>
-                  </select>
-                </form>
               </div>
               <div class="aa-product-catg-head-right">
                 <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
@@ -53,106 +60,137 @@
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
                 <!-- start single product item -->
+                @foreach($produtos as $produto)
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
-                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                    <a class="aa-product-img" href="{{route('produto.show', $produto->idProduto)}}"><img src="{{URL::asset('img/produtos/' . $produto->img)}}" alt="{{$produto->des}}" style="width: 280px; height: 300px;"></a>
+                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Comprar</a>
                     <figcaption>
-                      <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
-                      <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                      <p class="aa-product-descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam accusamus facere iusto, autem soluta amet sapiente ratione inventore nesciunt a, maxime quasi consectetur, rerum illum.</p>
+                      <h4 class="aa-product-title">{{str_limit($produto->nome, 20)}}<a href="{{route('produto.show', $produto->idProduto)}}"></a></h4>
+                        @if($produto->promoDesc != 0)
+                          <span class="aa-product-price"><del>R$ {{number_format($produto->val, 2,',','.')}}</del></span><span class="aa-product-price" style="color:red;">&emsp;R$ {{number_format(($produto->val-$produto->promoDesc), 2,',','.')}}</span>
+                        @else
+                          <span class="aa-product-price">R$ {{number_format($produto->val, 2,',','.')}}</span>
+                        @endif
+                      <p class="aa-product-descrip">{{$produto->des}}</p>
                     </figcaption>
                   </figure>                         
                   <div class="aa-product-hvr-content">
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Favoritar"><span class="fa fa-heart-o"></span></a>
+                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Detalhes" data-toggle="modal" data-target="#quick-view-modal-{{$produto->idProduto}}"><span class="fa fa-search"></span></a>                            
                   </div>
                   <!-- product badge -->
-                  <span class="aa-badge aa-sale" href="#">SALE!</span>
+                  @if($produto->qtd == 0)
+                    <span class="aa-badge aa-hot" href="#">Indisponivel</span>
+                  @elseif($produto->promoDesc != 0)
+                    <span class="aa-badge aa-sold-out">{{$produto->promoPor}}% DE DESCONTO!</span>
+                  @else
+                    <span class="aa-badge aa-sale" href="#">Disponivel</span>
+                  @endif
                 </li>
+                @endforeach
                 <!-- start single product item -->    
               </ul>
-              <!-- quick view modal -->                  
-              <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">                      
-                    <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <div class="row">
-                        <!-- Modal view slider -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">                              
-                          <div class="aa-product-view-slider">                                
-                            <div class="simpleLens-gallery-container" id="demo-1">
-                              <div class="simpleLens-container">
-                                  <div class="simpleLens-big-image-container">
-                                      <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1.png">
-                                          <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
-                                      </a>
-                                  </div>
+              <!-- quick view modal -->
+              <div id="quick-view">
+                @foreach($produtos as $produto)                  
+                <div class="modal fade" id="quick-view-modal-{{$produto->idProduto}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">                      
+                      <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <div class="row">
+                          <!-- Modal view slider -->
+                          <div class="col-md-6 col-sm-6 col-xs-12">                              
+                            <div class="aa-product-view-slider">                                
+                              <div class="simpleLens-gallery-container" id="demo-1">
+                                <div class="simpleLens-container">
+                                    <div class="simpleLens-big-image-container">
+                                        <a class="simpleLens-lens-image" data-lens-image="{{URL::asset('img/produtos/large/' . $produto->img)}}" href="{{route('produto.show', $produto->idProduto)}}">
+                                            <img src="{{URL::asset('img/produtos/' . @$produto->img)}}" class="simpleLens-big-image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="simpleLens-thumbnails-container">
+                                  <a data-big-image="{{ URL::asset('img/produtos/' . $produto->img)}}" data-lens-image="{{ URL::asset('img/produtos/large/' . $produto->img)}}" class="simpleLens-thumbnail-wrapper" href="#">
+                                    <img src="{{ URL::asset('img/produtos/thumb/' . $produto->img)}}">
+                                  </a>
+                                  @if($produto->img2 != null)
+                                    <a data-big-image="{{ URL::asset('img/produtos/' . $produto->img2)}}" data-lens-image="{{ URL::asset('img/produtos/large/' . $produto->img2)}}" class="simpleLens-thumbnail-wrapper" href="#">
+                                      <img src="{{ URL::asset('img/produtos/thumb/' . $produto->img2)}}">
+                                    </a>
+                                  @endif
+                                  @if($produto->img3 != null)
+                                    <a data-big-image="{{ URL::asset('img/produtos/' . $produto->img3)}}" data-lens-image="{{ URL::asset('img/produtos/large/' . $produto->img3)}}" class="simpleLens-thumbnail-wrapper" href="#">
+                                      <img src="{{ URL::asset('img/produtos/thumb/' . $produto->img3)}}">
+                                    </a>
+                                  @endif                                  
+                                </div>
                               </div>
-                              <div class="simpleLens-thumbnails-container">
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-1.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-1.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-1.png">
-                                  </a>                                    
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-3.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-3.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-3.png">
-                                  </a>
-
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-4.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-4.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-4.png">
-                                  </a>
+                            </div>
+                          </div>
+                          <!-- Modal view content -->
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="aa-product-view-content">
+                              <h3>{{str_limit($produto->nome, 20)}}</h3>
+                              <div class="aa-price-block">
+                                @if($produto->promoDesc != 0)
+                                  <span class="aa-product-price"><del>R$ {{number_format($produto->val, 2,',','.')}}</del></span><br><span class="aa-product-price" style="color:red;">R$ {{number_format(($produto->val-$produto->promoDesc), 2,',','.')}}</span>
+                                @else
+                                  <span class="aa-product-price">R$ {{number_format($produto->val, 2,',','.')}}</span>
+                                @endif
+                              </div>
+                              <p class="aa-product-avilability">{{__('Disponibilidade')}}:
+                                  <span>
+                                    @if($produto->qtd > 0)
+                                      Em estoque!
+                                    @else
+                                      Indisponivel!
+                                    @endif
+                                  </span>
+                                </p>
+                              <p>{{$produto->des}}</p>
+                              <h4>{{__('Tamanho')}}</h4>
+                              <div class="aa-prod-view-size">
+                                <a href="#">15</a>
+                                <a href="#">16</a>
+                                <a href="#">17</a>
+                                <a href="#">18</a>
+                              </div>
+                              <div class="aa-prod-quantity">
+                                <form action="">
+                                  <h3>Quantidade:</h3>
+                                  @if($produto->qtd > 15)
+                                  <select id="" name="">
+                                    <option selected="1" value="0">1</option>
+                                    @for($i = 1; $i < 16; $i++)
+                                      <option value="{{$i}} " >{{$i}}</option>
+                                    @endfor
+                                  </select>
+                                  @else
+                                  <select id="" name="">
+                                    <option selected="1" value="0">1</option>
+                                    @for($i = 1; $i < $produto->qtd+1; $i++)
+                                      <option value="{{$i}} " >{{$i}}</option>
+                                    @endfor
+                                  </select>
+                                  @endif
+                                </form>
+                                <p class="aa-prod-category">
+                                </p>
+                              </div>
+                              <div class="aa-prod-view-bottom">
+                                <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Comprar</a>
+                                <a href="{{route('produto.show', $produto->idProduto)}}" class="aa-add-to-cart-btn">Ver Produto</a>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <!-- Modal view content -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div class="aa-product-view-content">
-                            <h3>T-Shirt</h3>
-                            <div class="aa-price-block">
-                              <span class="aa-product-view-price">$34.99</span>
-                              <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis animi, veritatis quae repudiandae quod nulla porro quidem, itaque quis quaerat!</p>
-                            <h4>Size</h4>
-                            <div class="aa-prod-view-size">
-                              <a href="#">S</a>
-                              <a href="#">M</a>
-                              <a href="#">L</a>
-                              <a href="#">XL</a>
-                            </div>
-                            <div class="aa-prod-quantity">
-                              <form action="">
-                                <select name="" id="">
-                                  <option value="0" selected="1">1</option>
-                                  <option value="1">2</option>
-                                  <option value="2">3</option>
-                                  <option value="3">4</option>
-                                  <option value="4">5</option>
-                                  <option value="5">6</option>
-                                </select>
-                              </form>
-                              <p class="aa-prod-category">
-                                Category: <a href="#">Polo T-Shirt</a>
-                              </p>
-                            </div>
-                            <div class="aa-prod-view-bottom">
-                              <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                              <a href="#" class="aa-add-to-cart-btn">View Details</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>                        
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
+                      </div>                        
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div>
+                @endforeach
               </div>
               <!-- / quick view modal -->   
             </div>
@@ -165,10 +203,6 @@
                     </a>
                   </li>
                   <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
                   <li>
                     <a href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
@@ -183,31 +217,71 @@
           <aside class="aa-sidebar">
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Category</h3>
+              <h3>Categoria</h3>
               <ul class="aa-catg-nav">
-                <li><a href="#">Men</a></li>
-                <li><a href="">Women</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Electornics</a></li>
-                <li><a href="">Sports</a></li>
+                <li><a href="{{ url('list-produtos/1/1')}}">Anéis de Ouro</a></li>
+                <li><a href="{{ url('list-produtos/2/2')}}">Colares com Diamantes</a></li>
+                <li><a href="{{ url('list-produtos/3/3')}}">Alianças de Ouro</a></li>
+                <li><a href="{{ url('list-produtos/1/4')}}">Anéis de Formatura</a></li>
+                <li><a href="{{ url('list-produtos/3/5')}}">Alianças de Noivado</a></li>
+                <li><a href="{{ url('list-produtos/1/6')}}">Anéis Exclusivos</a></li>
+                <li><a href="{{ url('list-produtos/4/7')}}">Braceletes Masculinos</a></li>
+                <li><a href="{{ url('list-produtos/6/8')}}">Relógios Masculinos</a></li>
               </ul>
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Tags</h3>
+              <h3>Material</h3>
               <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
+                <a href="#">Ouro</a>
+                <a href="#">Ouro Rosé</a>
+                <a href="#">Ouro Branco</a>
+                <a href="#">Prata</a>
+                <a href="#">Couro</a>
+                <a href="#">Aço Cirurgico</a>
+              </div>
+            </div>
+            <!-- single sidebar -->
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Pedras</h3>
+              <div class="tag-cloud">
+                <a href="#">Jade</a>
+                <a href="#">Rubi</a>
+                <a href="#">Diamante</a>
+                <a href="#">Topazio</a/>
+                <a href="#">Esmeralda</a>
+                <a href="#">Zirconia</a>
+                <a href="#">Quartzo</a>
+              </div>
+            </div>
+            <!-- single sidebar -->
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Segmento</h3>
+              <div class="tag-cloud">
+                <a href="#">Feminino</a>
+                <a href="#">Masculino</a>
+                <a href="#">Unisex</a>
+                <a href="#">Infantil</a>
+              </div>
+            </div>
+            <!-- single sidebar -->
+            <!-- single sidebar -->
+            <div class="aa-sidebar-widget">
+              <h3>Material</h3>
+              <div class="tag-cloud">
+                <a href="#">Ouro</a>
+                <a href="#">Ouro Rosé</a>
+                <a href="#">Ouro Branco</a>
+                <a href="#">Prata</a>
+                <a href="#">Couro</a>
+                <a href="#">Aço Cirurgico</a>
               </div>
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Shop By Price</h3>              
+              <h3>Preço</h3>              
               <!-- price range -->
               <div class="aa-sidebar-price-range">
                <form action="">
@@ -215,12 +289,12 @@
                   </div>
                   <span id="skip-value-lower" class="example-val">30.00</span>
                  <span id="skip-value-upper" class="example-val">100.00</span>
-                 <button class="aa-filter-btn" type="submit">Filter</button>
+                 <button class="aa-filter-btn" type="submit">Filtrar</button>
                </form>
               </div>              
 
             </div>
-            <!-- single sidebar -->
+            <!-- single sidebar >
             <div class="aa-sidebar-widget">
               <h3>Shop By Color</h3>
               <div class="aa-color-tag">
@@ -237,65 +311,7 @@
                 <a class="aa-color-olive" href="#"></a>
                 <a class="aa-color-orchid" href="#"></a>
               </div>                            
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Recently Views</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
-                </ul>
-              </div>                            
-            </div>
-            <!-- single sidebar -->
-            <div class="aa-sidebar-widget">
-              <h3>Top Rated Products</h3>
-              <div class="aa-recently-views">
-                <ul>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                  <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>
-                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
-                </ul>
-              </div>                            
-            </div>
+            </div-->
           </aside>
         </div>
        

@@ -7,8 +7,8 @@
     <div class="container">
 	<ol class="breadcrumb">
       <li><a href="{{url('/')}}">Pagina Inicial</a></li>
-      <li><a href="{{url('#')}}">{{$produto->nCat}}</a></li>
-      <li><a href="{{url('#')}}">{{$produto->nSubCat}}</a></li>
+      <li><a href="{{url('/list-produtos/' . $produto->cat)}}">{{$produto->nCat}}</a></li>
+      <li><a href="{{url('/list-produtos/' . $produto->cat .'/'. $produto->subCat)}}">{{$produto->nSubCat}}</a></li>
       <li class="active">{{$produto->nome}}</li>
     </ol>
       <div class="row">
