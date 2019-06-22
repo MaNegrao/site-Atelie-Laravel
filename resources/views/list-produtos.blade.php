@@ -47,12 +47,12 @@
             <div class="aa-product-catg-head">
               <div class="aa-product-catg-head-left">
                 <form action="" class="aa-sort-form">
-                  <label for="">Ordenar por</label>
+                  <label for="">{{__('Ordenar por')}}</label>
                   <select name="">
-                    <option value="1" selected="Default">Padrão</option>
-                    <option value="2">Nome</option>
-                    <option value="3">Preço</option>
-                    <option value="4">Mais Relevantes</option>
+                    <option value="1" selected="Default">{{__('Padrão')}}</option>
+                    <option value="2">{{__('Nome')}}</option>
+                    <option value="3">{{__('Preço')}}</option>
+                    <option value="4">{{__('Mais Relevantes')}}</option>
                   </select>
                 </form>
               </div>
@@ -85,11 +85,11 @@
                   </div>
                   <!-- product badge -->
                   @if($produto->qtd == 0)
-                    <span class="aa-badge aa-hot" href="#">Indisponivel</span>
+                    <span class="aa-badge aa-hot" href="#">{{__('Indisponivel')}}</span>
                   @elseif($produto->promoDesc != 0)
                     <span class="aa-badge aa-sold-out">{{$produto->promoPor}}% DE DESCONTO!</span>
                   @else
-                    <span class="aa-badge aa-sale" href="#">Disponivel</span>
+                    <span class="aa-badge aa-sale" href="#">{{__('Disponivel')}}</span>
                   @endif
                 </li>
                 @endforeach

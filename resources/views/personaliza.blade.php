@@ -26,12 +26,9 @@
      <div class="row">
        <div class="col-md-12">
          <div class="aa-contact-area">
-           <div class="aa-contact-top">            
+           <div class="aa-contact-top">
+       		<h2>Personalize do seu Jeito!</h2>            
              <p>{{__('Aqui você pode encomendar uma joia do jeito que você quiser, deixando sua marca em todos os detalhes, da escolha do material ao acabamento. Você pode personalizar uma de nossas jóias do seu jeito ou criar algo totalmente exclusivo para você.')}}</p>
-           </div>
-           <!-- contact map -->
-           <div class="aa-contact-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.3714257064535!2d-86.7550931378034!3d34.66757706940219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8862656f8475892d%3A0xf3b1aee5313c9d4d!2sHuntsville%2C+AL+35813%2C+USA!5e0!3m2!1sen!2sbd!4v1445253385137" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
            </div>
            <!-- Contact address -->
            <div class="aa-contact-address">
@@ -39,46 +36,124 @@
                <div class="col-md-8">
                  <div class="aa-contact-address-left">
                    <form class="comments-form contact-form" action="">
+                   	<div class="row">
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+	                   			<select name="mat" class="form-control">
+	                   				<option selected disabled>{{__('Matéria Prima')}}</option>
+				                    <option value="Ouro Amarelo">{{__('Ouro Amarelo')}}</option>
+				                    <option value="Ouro Branco">{{__('Ouro Branco')}}</option>
+				                    <option value="Ouro Rosé">{{__('Ouro Rosé')}}</option>
+				                    <option value="Prata">{{__('Prata')}}</option>
+				                    <option value="Aço Cirurgico">{{__('Aço Cirurgico')}}</option>
+				                    <option value="Couro">{{__('Couro')}}</option>
+				                </select>
+                   			</div>
+                   		</div>
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+                   				<select name="tipo" class="form-control">
+	                   				<option selected disabled>{{__('Gema')}}</option>
+				                    <option value="">{{__('Diamante')}}</option>
+				                    <option value="">{{__('Esmeralda')}}</option>
+				                    <option value="">{{__('Rubi')}}</option>
+				                    <option value="">{{__('Zirconia')}}</option>
+				                    <option value="">{{__('Nenhuma')}}</option>
+				                    <option value="">{{__('Jade')}}</option>
+				                </select>
+                   			</div>
+                   		</div>
+                   </div>
+                   <div class="row">
+                   	   	<div class="col-md-6">
+                   			<div class="form-group">
+                   				<select name="tipo" class="form-control">
+	                   				<option selected disabled>{{__('Tipo de Joia')}}</option>
+				                    <option value="">{{__('Aliança')}}</option>
+				                    <option value="">{{__('Anel')}}</option>
+				                    <option value="">{{__('Brinco')}}</option>
+				                    <option value="">{{__('Colar')}}</option>
+				                    <option value="">{{__('Bracelete')}}</option>
+				                    <option value="">{{__('Relógio')}}</option>
+				                </select>
+                   			</div>
+                   		</div>
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+                   				<select name="tipo" class="form-control">
+	                   				<option selected disabled>{{__('Categoria da Joia')}}</option>
+				                    <option value="">{{__('Casamento')}}</option>
+				                    <option value="">{{__('Formatura')}}</option>
+				                    <option value="">{{__('Presente')}}</option>
+				                    <option value="">{{__('Formal')}}</option>
+				                    <option value="">{{__('Conjunto')}}</option>
+				                </select>
+                   			</div>
+                   		</div>
+                   	</div>                	                   	
+                   	<div class="row">
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+                   				<select name="tipo" class="form-control" required>
+	                   				<option selected disabled>{{__('Acabamento')}}</option>
+				                    <option value="">{{__('Perolado')}}</option>
+				                    <option value="">{{__('Fosco')}}</option>
+				                    <option value="">{{__('Frisado')}}</option>
+				                    <option value="">{{__('Liso')}}</option>
+				                    <option value="">{{__('Chanfrado')}}</option>
+				                </select>
+                   			</div>
+                   		</div>
+                   		<div class="col-md-6">
+	                    	<div class="form-group">
+	                    		<label for="arquivo" class="custom-file-upload"><span class="fa fa-upload"></span> {{__('Envie uma Imagem ou documento com esboço para facilitar')}}<input type="file" name="arquivo" id="arquivo" class="form-control" value="Envie uma imagem"></label>
+	                    	</div>
+	                    </div>
+	                </div>
+	                <div class="row">
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+	                   			<label><input type="radio" name="joia" value="site" id="jSite">Joia do Site </label>&emsp;
+	                   			<label><input type="radio" name="joia" value="exclusiva" id="jExclusiva" checked>Joia Exclusiva</label>            			
+                   			</div>
+                   		</div>
+                   		<div class="col-md-6">
+                   			<div class="form-group">
+                   				<input type="text" name="idProduto" id="idProduto" disabled placeholder="ID Produto" class="form-control">
+                   			</div>
+                   		</div>
+                   	</div>
+                   	<div class="row">                    
+	                    <div class="col-md-12"> 
+	                    	<div class="form-group">                       
+	                      		<textarea class="form-control" rows="3" placeholder="Digite aqui o máximo de detalhes possíveis sobre sua jóia:"></textarea>
+	                      	</div>
+	                    </div>
+                    </div>
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">                        
-                          <input type="text" placeholder="Your Name" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">                        
-                          <input type="email" placeholder="Email" class="form-control">
-                        </div>
-                      </div>
+                    	<div class="col-md-8">
+                    		<div class="form-group">
+                    			<label><input type="checkbox" name="selpropia" id="selpropia">Deseja utilizar alguma matéria prima ou gema própia?</label>
+                    		</div>                 			
+                      	</div>
+                      	<div class="col-md-4">
+                    		<div class="form-group">
+                    			<input type="text" name="propia" id="propia" class="form-control" placeholder="Qual?" disabled>
+                    		</div>                 			
+                      	</div>
                     </div>
-                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">                        
-                          <input type="text" placeholder="Subject" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">                        
-                          <input type="text" placeholder="Company" class="form-control">
-                        </div>
-                      </div>
-                    </div>                  
-                     
-                    <div class="form-group">                        
-                      <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                    </div>
-                    <button class="aa-secondary-btn">Send</button>
+                    <button style="width: 450px;" class="aa-secondary-btn">{{__('Finalizar Encomenda')}}</button>
                   </form>
                  </div>
                </div>
                <div class="col-md-4">
                  <div class="aa-contact-address-right">
                    <address>
-                     <h4>DailyShop</h4>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum modi dolor facilis! Nihil error, eius.</p>
-                     <p><span class="fa fa-home"></span>Huntsville, AL 35813, USA</p>
-                     <p><span class="fa fa-phone"></span>+ 021.343.7575</p>
-                     <p><span class="fa fa-envelope"></span>Email: support@dailyshop.com</p>
+                     <h4>{{__('Diamant\'s Exclusive!')}}</h4>
+                     <p>{{__('Se você preferir pode vir até nossa loja e encomendar sua jóia exclusiva na hora!')}}</p>
+                     <p><span class="fa fa-map-marker"></span>{{__('Rua Rangel Pestana - 87, Centro | Jundiai-SP')}}</p>
+                     <p><span class="fa fa-phone"></span>{{__('+55 (011) 4002-8922')}}</p>
+                     <p><span class="fa fa-envelope"></span>{{__('exclusive@diamants.com')}}</p>
                    </address>
                  </div>
                </div>

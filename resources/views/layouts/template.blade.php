@@ -101,7 +101,7 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">{{__('CARRINHO')}}</span>
-                  <span class="aa-cart-notify">1</span>
+                  <span class="aa-cart-notify">{{__('1')}}</span>
                 </a>
                 <div class="aa-cartbox-summary">
                   <ul>
@@ -109,16 +109,16 @@
                       <a class="aa-cartbox-img" href="#"><img src="{{ URL::asset('img/produtos/anel-ouro-prata-1.jpg')}}" alt="img"></a>
                       <div class="aa-cartbox-info">
                         <h4><a href="#">{{__('Anel de Ouro e Prata')}}</a></h4>
-                        <p>1 x R$1.049,97</p>
+                        <p>{{__('1 x R$1.049,97')}}</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                     </li>
                     <li>
                       <span class="aa-cartbox-total-title">
-                        Total
+                        {{__('Total')}}
                       </span>
                       <span class="aa-cartbox-total-price">
-                        R$1.049,97
+                        {{__('R$1.049,97')}}
                       </span>
                     </li>
                   </ul>

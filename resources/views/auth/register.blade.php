@@ -1,4 +1,4 @@
-@extends('layouts.template')
+{{__('exclusive@diamants.com')}}@extends('layouts.template')
 
 @section('content')
 
@@ -28,21 +28,21 @@
           <div class="row">
             <div class="col-md-6">
               <div class="aa-myaccount-login">
-              <h2>Entre</h2>
+              <h2>{{__('Entre')}}</h2>
                <form action="" class="aa-login-form">
-                <label for="">Email<span>*</span></label>
+                <label for="">{{__('Email')}}<span>*</span></label>
                  <input type="text" placeholder="Endereço de E-mail">
-                 <label for="">Senha<span>*</span></label>
+                 <label for="">{{__('Senha')}}<s0pan>*</span></label>
                   <input type="password" placeholder="Senha">
-                  <button type="submit" class="aa-browse-btn">Entrar</button>
-                  <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme">Lembrar-me</label>
-                  <p class="aa-lost-password"><a href="#">Esqueci minha senha</a></p>
+                  <button type="submit" class="aa-browse-btn">{{__('Entrar')}}</button>
+                  <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme">{{__('Lembrar-me')}}</label>
+                  <p class="aa-lost-password"><a href="#">{{__('Esqueci minha senha')}}</a></p>
                 </form>
               </div>
             </div>
             <div class="col-md-6">
               <div class="aa-myaccount-register">
-               <h2>Cadastre-se</h2>
+               <h2>{{__('Cadastre-se')}}</h2>
                <form action="{{route('register')}}" method="post" class="aa-login-form">
                  {{csrf_field()}}
                   <label for="nome">{{__('Nome Completo')}}<span>*</span></label>

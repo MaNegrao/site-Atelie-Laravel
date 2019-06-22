@@ -3268,6 +3268,18 @@ img {
  CONTACT  PAGE
 ====================*/
 
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
 #aa-contact {
   background: #ccc none repeat scroll 0 0;
   display: inline;

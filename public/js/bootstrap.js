@@ -2361,3 +2361,21 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+document.getElementById("jSite").onclick = function(){
+  document.getElementById("idProduto").disabled = false;
+};
+
+document.getElementById("jExclusiva").onclick = function(){
+  document.getElementById("idProduto").value = "";
+  document.getElementById("idProduto").disabled = true;
+};
+
+document.getElementById("selpropia").onclick = function(){
+  if(document.getElementById("propia").disabled == false){
+    document.getElementById("propia").disabled = true;
+  }
+  else{
+    document.getElementById("propia").disabled = false;
+  }
+};
