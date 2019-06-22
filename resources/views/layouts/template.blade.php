@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Diamant's Exclusive</title>
+    <title>{{__('Diamant\'s Exclusive')}}</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.png') }}" type="image/x-icon"/>
     <!-- Font awesome -->
@@ -34,22 +34,12 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
 
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
   </head>
   <body>
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">
       <div class="wpf-loader-two-inner">
-        <span>Carregando</span>
+        <span>{{__('Carregando')}}</span>
       </div>
     </div>
     <!-- / wpf loader Two -->
@@ -70,19 +60,19 @@
               <div class="aa-header-top-left">
                 <!-- start cellphone -->
                 <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span> 4002-8922</p>
+                  <p><span class="fa fa-phone"></span>{{__(' 4002-8922')}}</p>
                 </div>
                 <!-- / cellphone -->
               </div>
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">Minha Conta</a></li>
-                  <li class="hidden-xs"><a href="#">Lista de Desejos</a></li>
-                  <li class="hidden-xs"><a href="#">Personalize</a></li>
-                  <li class="hidden-xs"><a href="{{url('/carrinho')}}">Carrinho</a></li>
-                  <li class="hidden-xs"><a href="{{route('register')}}">Cadastre-se</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Entrar</a></li>
+                  <li><a href="account.html">{{__('Minha Conta')}}</a></li>
+                  <li class="hidden-xs"><a href="#">{{__('Lista de Desejos')}}</a></li>
+                  <li class="hidden-xs"><a href="{{url('\personalize')}}">{{__('Personalize')}}</a></li>
+                  <li class="hidden-xs"><a href="{{url('/carrinho')}}">{{__('Carrinho')}}</a></li>
+                  <li class="hidden-xs"><a href="{{route('register')}}">{{__('Cadastre-se')}}</a></li>
+                  <li><a href="" data-toggle="modal" data-target="#login-modal">{{__('Entrar')}}</a></li>
                 </ul>
               </div>
             </div>
@@ -132,7 +122,7 @@
                       </span>
                     </li>
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url('/carrinho')}}">Finalizar</a>
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url('/carrinho')}}">{{__('Finalizar')}}</a>
                 </div>
               </div>
               <!-- / cart box -->
@@ -266,7 +256,7 @@
         <div class="col-md-12">
           <div class="aa-subscribe-area">
             <h3>{{__('Cadastre-se!')}}</h3>
-            <p>Se inscreva na nossa newsletter e receba todas as novidades do site antes de todo mundo!</p>
+            <p>{{__('Se inscreva na nossa newsletter e receba todas as novidades do site antes de todo mundo!')}}</p>
             <form action="" class="aa-subscribe-form">
               <input type="email" name="" id="" placeholder="Digite seu E-mail">
               <input type="submit" value="Cadastrar">
@@ -289,13 +279,13 @@
             <div class="row">
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
-                  <h3>Menu Principal</h3>
+                  <h3>{{__('Menu Principal')}}</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="{{url('/')}}">Pagina Inicial</a></li>
-                    <li><a href="#">Nossos Serviços</a></li>
-                    <li><a href="#">Nossos Produtos</a></li>
-                    <li><a href="#">Sobre a Loja</a></li>
-                    <li><a href="#">Como Comprar</a></li>
+                    <li><a href="{{url('/')}}">{{__('Pagina Inicial')}}</a></li>
+                    <li><a href="#">{{__('Nossos Serviços')}}</a></li>
+                    <li><a href="#">{{__('Nossos Produtos')}}</a></li>
+                    <li><a href="#">{{__('Sobre a Loja')}}</a></li>
+                    <li><a href="#">{{__('Como Comprar')}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -304,11 +294,11 @@
                   <div class="aa-footer-widget">
                     <h3>{{__('Atendimento')}}</h3>
                     <ul class="aa-footer-nav">
-                      <li><a href="#">Entrega</a></li>
-                      <li><a href="#">Devolição</a></li>
-                      <li><a href="#">Serviços</a></li>
-                      <li><a href="#">Promoções</a></li>
-                      <li><a href="#">Pagamento</a></li>
+                      <li><a href="#">{{__('Entrega')}}</a></li>
+                      <li><a href="#">{{__('Devolição')}}</a></li>
+                      <li><a href="#">{{__('Serviços')}}</a></li>
+                      <li><a href="#">{{__('Promoções')}}</a></li>
+                      <li><a href="#">{{__('Pagamento')}}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -316,13 +306,13 @@
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
-                    <h3>Links Utéis</h3>
+                    <h3>{{__('Links Utéis')}}</h3>
                     <ul class="aa-footer-nav">
-                      <li><a href="#">Mapa do Site</a></li>
-                      <li><a href="#">Politica de Compras</a></li>
-                      <li><a href="#">Politica de Entrega</a></li>
-                      <li><a href="#">Politica de Devolução</a></li>
-                      <li><a href="#">Politica de Garantias</a></li>
+                      <li><a href="#">{{__('Mapa do Site')}}</a></li>
+                      <li><a href="#">{{__('Politica de Compras')}}</a></li>
+                      <li><a href="#">{{__('Politica de Entrega')}}</a></li>
+                      <li><a href="#">{{__('Politica de Devolução')}}</a></li>
+                      <li><a href="#">{{__('Politica de Garantias')}}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -330,11 +320,11 @@
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
-                    <h3>Entre em Contato</h3>
+                    <h3>{{__('Entre em Contato')}}</h3>
                     <address>
-                      <p>Rua Rangel Pestana - 87<br>Centro, Jundiai-SP</p>
-                      <p><span class="fa fa-phone"></span>+55 (011) 4002-8922</p>
-                      <p><span class="fa fa-envelope"></span>exclusive@diamants.com</p>
+                      <p>{{__('Rua Rangel Pestana - 87')}}<br>{{__('Centro, Jundiai-SP')}}</p>
+                      <p><span class="fa fa-phone"></span>{{__('+55 (011) 4002-8922')}}</p>
+                      <p><span class="fa fa-envelope"></span>{{__('exclusive@diamants.com')}}</p>
                     </address>
                     <div class="aa-footer-social">
                       <a href="#"><span class="fa fa-facebook"></span></a>
@@ -378,17 +368,17 @@
       <div class="modal-content">
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4>Entre ou Cadastre-se</h4>
+          <h4>{{__('Entre ou Cadastre-se')}}</h4>
           <form class="aa-login-form" action="">
-            <label for="">Seu endereço de Email:<span>*</span></label>
+            <label for="">{{__('Seu endereço de Email:')}}<span>*</span></label>
             <input type="text" placeholder="Email">
-            <label for="">Senha:<span>*</span></label>
+            <label for="">{{__('Senha:')}}<span>*</span></label>
             <input type="password" placeholder="Senha">
-            <button class="aa-browse-btn" type="submit">Entrar</button>
-            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme">Lembrar de mim</label>
-            <p class="aa-lost-password"><a href="#">Esqueci minha senha</a></p>
+            <button class="aa-browse-btn" type="submit">{{__('Entrar')}}</button>
+            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme">{{__('Lembrar de mim')}}</label>
+            <p class="aa-lost-password"><a href="#">{{__('Esqueci minha senha')}}</a></p>
             <div class="aa-register-now">
-              Ainda não tem uma conta?<a href="{{route('register')}}">Cadastre-se Aqui!</a>
+              {{__('Ainda não tem uma conta?')}}<a href="{{route('register')}}">{{__('Cadastre-se Aqui!')}}</a>
             </div>
           </form>
         </div>

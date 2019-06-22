@@ -4,7 +4,7 @@
 
 <!-- catg header banner section -->
 <section id="aa-catg-head-banner">
-  <img src="{{URL::asset(img/cadastre-se-1.jpg)}}" alt="fashion img">
+  <img src="{{URL::asset('img/banners/cadastre-se-1.jpg')}}" alt="cadsatre-se">
   <div class="aa-catg-head-banner-area">
    <div class="container">
     <div class="aa-catg-head-banner-content">

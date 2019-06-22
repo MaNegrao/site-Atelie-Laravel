@@ -4,7 +4,11 @@
 
 <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="{{URL::asset('img/banners/banner-Anéis.jpg')}}" alt="fashion img">
+    @if($prodCat == null && $prodSubCat == null)
+      <img src="{{URL::asset('img/banners/banner-Anéis.jpg')}}" alt="anéis">
+    @else
+      <img src="{{URL::asset('img/banners/banner-'. $prodCat->nome . '.png')}}" alt="$prodCat->nome">
+    @endif
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">

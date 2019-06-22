@@ -18,4 +18,6 @@ Route::resource('produto', 'ProdutoController');
 
 Route::view('/carrinho', 'carrinho');
 
+Route::view('/personalize', 'personaliza');
+
 Auth::routes();
