@@ -96,39 +96,36 @@
               <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{URL::asset('img/profile-generic.jpeg')}}" alt="profile img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>{{__('Gostei, a pulseira é linda toda com o acabamentos delicados. Uma pena ter comprando um centímetros á mais. Mas amei! Ah mais um detalhe que achei não ruim só que me incomodou no braço um pouco... ')}}</p>
                   <div class="aa-testimonial-info">
-                    <p>Allison</p>
-                    <span>Designer</span>
-                    <a href="#">Dribble.com</a>
+                    <p>{{__('Fernanda Rabelo')}}</p>
+                    <span>{{__('Compra Verificada')}}</span>
                   </div>
                 </div>
               </li>
               <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-1.jpg" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{URL::asset('img/profile-generic.jpeg')}}" alt="profile img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>{{__('Saio todo dia com o meu bracelete, ótimo produto!')}}</p>
                   <div class="aa-testimonial-info">
-                    <p>KEVIN MEYER</p>
-                    <span>CEO</span>
-                    <a href="#">Alphabet</a>
+                    <p>{{__('Flávia Oliveira')}}</p>
+                    <span>{{__('Compra Verificada')}}</span>
                   </div>
                 </div>
               </li>
                <!-- single slide -->
               <li>
                 <div class="aa-testimonial-single">
-                <img class="aa-testimonial-img" src="img/testimonial-img-3.jpg" alt="testimonial img">
+                <img class="aa-testimonial-img" src="{{URL::asset('img/profile-generic.jpeg')}}" alt="profile img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>{{__('Excelente produto, prata de ótima qualidade e acabamento impecável.')}}</p>
                   <div class="aa-testimonial-info">
-                    <p>Luner</p>
-                    <span>COO</span>
-                    <a href="#">Kinatic Solution</a>
+                    <p>{{__('Alexsander')}}</p>
+                    <span>{{__('Compra Verificada')}}</span>
                   </div>
                 </div>
               </li>

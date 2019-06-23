@@ -1,4 +1,4 @@
-{{__('exclusive@diamants.com')}}@extends('layouts.template')
+@extends('layouts.template')
 
 @section('content')
 

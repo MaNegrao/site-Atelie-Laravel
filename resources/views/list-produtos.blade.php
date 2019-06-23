@@ -5,7 +5,7 @@
 <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
     @if($prodCat == null && $prodSubCat == null)
-      <img src="{{URL::asset('img/banners/banner-Anéis.jpg')}}" alt="anéis">
+      <img src="{{URL::asset('img/banners/banner-Anéis.png')}}" alt="anéis">
     @else
       <img src="{{URL::asset('img/banners/banner-'. $prodCat->nome . '.png')}}" alt="$prodCat->nome">
     @endif
