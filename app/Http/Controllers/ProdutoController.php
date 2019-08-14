@@ -45,12 +45,13 @@ class ProdutoController extends Controller
 
     public function store(Request $request) {
         $produto = new Produto;
+        $produto->nome = $request->nome;
         $produto->val = $request->val;
         $produto->qtd = $request->qtd;
+        $produto->peso = $request->peso;
         $produto->mater = $request->mater;
         $produto->des = $request->des;
         $produto->pedra = $request->pedra;
-        $produto->nome = $request->nome;
         $produto->cat = $request->cat;
         $produto->img = $request->img;
         $produto->seg = $request->seg;
