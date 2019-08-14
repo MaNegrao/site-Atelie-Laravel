@@ -49,15 +49,19 @@ class ProdutoController extends Controller
         $produto->val = $request->val;
         $produto->qtd = $request->qtd;
         $produto->peso = $request->peso;
+        $produto->img = $request->img;
+        $produto->img2 = $request->img2;
+        $produto->img3 = $request->img3;
+        $produto->cat = $request->cat;
+        $produto->subCat = $request->subCat;
         $produto->mater = $request->mater;
+        $produto->seg = $request->seg;
         $produto->des = $request->des;
         $produto->pedra = $request->pedra;
-        $produto->cat = $request->cat;
-        $produto->img = $request->img;
-        $produto->seg = $request->seg;
         $produto->acab = $request->acab;
-        $produto->desVal = $request->desVal;
-        $produto->desPor = ($request->desVal * 100) / $request->val;
+        $produto->promoDesc = $request->promoDesc;
+        $produto->promoPor = $request->promoPor;
+        $produto->promoMsg = $promoMsg;
         $produto->save();
         return redirect()->route('produto.index')->with('message', 'Produto criado com sucesso!');
     }
