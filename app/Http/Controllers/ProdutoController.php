@@ -85,11 +85,23 @@ class ProdutoController extends Controller
 
     public function update(Request $request, $idProduto) {
         $produto = Produto::findOrFail($idProduto); 
+        $produto->nome = $request->nome;
         $produto->val = $request->val;
         $produto->qtd = $request->qtd;
+        $produto->peso = $request->peso;
+        $produto->img = $request->img;
+        $produto->img2 = $request->img2;
+        $produto->img3 = $request->img3;
+        $produto->cat = $request->cat;
+        $produto->subCat = $request->subCat;
         $produto->mater = $request->mater;
+        $produto->seg = $request->seg;
         $produto->des = $request->des;
-        $produto->nome = $request->nome;
+        $produto->pedra = $request->pedra;
+        $produto->acab = $request->acab;
+        $produto->promoDesc = $request->promoDesc;
+        $produto->promoPor = $request->promoPor;
+        $produto->promoMsg = $promoMsg;
         $produto->save();
         return redirect()->route('produto.index')->with('message', 'Produto alterado com sucesso!');
     }
