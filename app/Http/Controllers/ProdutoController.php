@@ -71,8 +71,7 @@ class ProdutoController extends Controller
         if (!$produto){
             return view('404');
         }
-
-
+        
         list($produto) = DB::table('Produto')->join('ProdCat', 'idCat', 'cat')->join('ProdSubCat', 'subCat', 'idSubCat')
                         ->select('Produto.*', 'ProdCat.nome as nCat', 'ProdSubCat.nome as nSubCat')
                         ->where('idProduto', '=', $idProduto)->get(); 
@@ -91,8 +90,6 @@ class ProdutoController extends Controller
         $produto->mater = $request->mater;
         $produto->des = $request->des;
         $produto->nome = $request->nome;
-        $produto->cat = $request->cat;
-        $produto->seg = $request->seg;
         $produto->save();
         return redirect()->route('produto.index')->with('message', 'Produto alterado com sucesso!');
     }
