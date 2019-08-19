@@ -147,23 +147,23 @@
                               <p class="aa-product-avilability">{{__('Disponibilidade')}}:
                                   <span>
                                     @if($produto->qtd > 0)
-                                      Em estoque!
+                                      {{__('Em estoque!')}}
                                     @else
-                                      Indisponivel!
+                                      {{__('Indisponivel!')}}
                                     @endif
                                   </span>
                                 </p>
                               <p>{{$produto->des}}</p>
                               <h4>{{__('Tamanho')}}</h4>
                               <div class="aa-prod-view-size">
-                                <a href="#">15</a>
-                                <a href="#">16</a>
-                                <a href="#">17</a>
-                                <a href="#">18</a>
+                                <a href="#">{{__('15')}}</a>
+                                <a href="#">{{__('16')}}</a>
+                                <a href="#">{{__('17')}}</a>
+                                <a href="#">{{__('18')}}</a>
                               </div>
                               <div class="aa-prod-quantity">
                                 <form action="">
-                                  <h3>Quantidade:</h3>
+                                  <h3>{{__('Quantidade:')}}</h3>
                                   @if($produto->qtd > 15)
                                   <select id="" name="">
                                     <option selected="1" value="0">1</option>
