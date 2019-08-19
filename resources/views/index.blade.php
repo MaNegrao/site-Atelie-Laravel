@@ -38,7 +38,7 @@
   <section id="aa-promo">
     <div class="container">
       <div class="row">
-        <h1 id='title-home'>{{Itens Promocionais}}</h1>
+        <h1 id='title-home'>{{__('Itens Promocionais')}}</h1>
         <div class="col-md-12">
           <div class="aa-promo-area">
             <div class="row">
@@ -143,7 +143,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-latest-blog-area">
-            <h2>{{Ultimas Publicações}}</h2>
+            <h2>{{__('Ultimas Publicações')}}</h2>
             <div class="row">
               <!-- single latest blog -->
               <div class="col-md-4 col-sm-4">
@@ -182,24 +182,24 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-truck"></span>
-                <h4>{{Entrega Grátis}}</h4>
-                <P>{{Compras acima de R$ 1500,00. O frete é por nossa conta.}}</P>
+                <h4>{{__('Entrega Grátis')}}</h4>
+                <P>{{__('Compras acima de R$ 1500,00. O frete é por nossa conta.')}}</P>
               </div>
             </div>
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-clock-o"></span>
-                <h4>{{Devolução em até 30 dias}}</h4>
-                <P>{{Se seu produto tiver problema. Entregamos um novo ou o seu dinheiro de volta em até 30 dias úteis.}}</P>
+                <h4>{{__('Devolução em até 30 dias.')}}</h4>
+                <P>{{__('Se seu produto tiver problema. Entregamos um novo ou o seu dinheiro de volta em até 30 dias úteis.')}}</P>
               </div>
             </div>
             <!-- single support -->
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="aa-support-single">
                 <span class="fa fa-comments"></span>
-                <h4>{{Atendimento 24hrs}}</h4>
-                <P>{{Atendimento através do chat do site 24 horas.}}</P>
+                <h4>{{__('Atendimento 24hrs.')}}</h4>
+                <P>{{__('Atendimento através do chat do site 24 horas.')}}</P>
               </div>
             </div>
           </div>
