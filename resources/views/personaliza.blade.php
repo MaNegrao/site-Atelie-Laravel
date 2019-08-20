@@ -27,7 +27,7 @@
        <div class="col-md-12">
          <div class="aa-contact-area">
            <div class="aa-contact-top">
-       		<h2>Personalize do seu Jeito!</h2>            
+       		<h2>{{__('Personalize do seu Jeito!')}}</h2>            
              <p>{{__('Aqui você pode encomendar uma joia do jeito que você quiser, deixando sua marca em todos os detalhes, da escolha do material ao acabamento. Você pode personalizar uma de nossas jóias do seu jeito ou criar algo totalmente exclusivo para você.')}}</p>
            </div>
            <!-- Contact address -->
