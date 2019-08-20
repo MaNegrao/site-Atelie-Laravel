@@ -67,25 +67,25 @@
 
                         <div class="">
                           <div class="aa-prod-view-size">
-                          <h3>Tamanho: </h3>
-                          <a href="#">16</a>
-                          <a href="#">17</a>
-                          <a href="#">18</a>
-                          <a href="#">19</a>
+                          <h3>{{__('Tamanho: ')}}</h3>
+                          <a href="#">{{__('16')}}</a>
+                          <a href="#">{{__('17')}}</a>
+                          <a href="#">{{__('18')}}</a>
+                          <a href="#">{{__('19')}}</a>
                         </div>
                         <div class="aa-prod-quantity">
                           <form action="">
-                          	<h3>Quantidade:</h3>
+                          	<h3>{{__('Quantidade:')}}</h3>
                             @if($produto->qtd > 15)
                             <select id="" name="">
-                              <option selected="1" value="0">1</option>
+                              <option selected="1" value="0">{{__('1')</option>
                               @for($i = 1; $i < 16; $i++)
                                 <option value="{{$i}} " >{{$i}}</option>
                               @endfor
                             </select>
                             @else
                             <select id="" name="">
-                              <option selected="1" value="0">1</option>
+                              <option selected="1" value="0">{{__('1')</option>
                               @for($i = 1; $i < $produto->qtd+1; $i++)
                                 <option value="{{$i}} " >{{$i}}</option>
                               @endfor
@@ -95,8 +95,8 @@
                         </div>
                       </div>
                     <div class="aa-prod-view-bottom">
-                      <a class="aa-add-to-cart-btn" href="#">Comprar</a>
-                      <a class="aa-add-to-cart-btn" href="#">Adicionar aos Favoritos</a>
+                      <a class="aa-add-to-cart-btn" href="#">{{__('Comprar')}}</a>
+                      <a class="aa-add-to-cart-btn" href="#">{{__('Adicionar aos Favoritos')}}</a>
                     </div>
                   </div>
                 </div>
@@ -104,21 +104,21 @@
             </div>
             <div class="aa-product-details-bottom">
               <ul class="nav nav-tabs" id="myTab2">
-                <li><a href="#description" data-toggle="tab">Descrição do Produto</a></li>
-                <li><a href="#" data-toggle="tab">Reviews</a></li>
+                <li><a href="#description" data-toggle="tab">{{__('Descrição do Produto')}}</a></li>
+                <li><a href="#" data-toggle="tab">{{__('Reviews')}}</a></li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade in active" id="description">
                   <ul>
-                    <li><label>Descrição: </label><span>{{$produto->des}}</span></li>
-                    <li><label>Categoria: </label><span>{{$produto->nCat}}</span></li>
-                    <li><label>Material Utilizado:</label><span>{{$produto->mater}}</span></li>
-                    <li><label>Acabamento:</label><span>{{$produto->acab}}</span></li>
-                    <li><label>Peso aproximado:</label><span>{{$produto->peso}}g</span></li>
+                    <li><label>{{__('Descrição: ')}}</label><span>{{$produto->des}}</span></li>
+                    <li><label>{{__('Categoria: ')}}</label><span>{{$produto->nCat}}</span></li>
+                    <li><label>{{__('Material Utilizado:')}}</label><span>{{$produto->mater}}</span></li>
+                    <li><label>{{__('Acabamento:')}}</label><span>{{$produto->acab}}</span></li>
+                    <li><label>{{__('Peso aproximado:')}}</label><span>{{$produto->peso}}{{__('g')}}</span></li>
                     @if($produto->pedra != null)
-                      <li><label>Pedra:</label><span>{{$produto->pedra}}</span></li>
+                      <li><label>{{__('Pedra:')}}</label><span>{{$produto->pedra}}</span></li>
                     @endif
                   </ul>
               </div>
